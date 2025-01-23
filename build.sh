@@ -10,7 +10,13 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf install -y tmux steam-devices virt-manager
+dnf install -y tmux virt-manager
+
+dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+dnf -y install steam-devices
+
+dnf config-manager addrepo --from-repofile=https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+dnf install tailscale
 
 # Use a COPR Example:
 #
@@ -22,3 +28,4 @@ dnf install -y tmux steam-devices virt-manager
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable --now tailscaled

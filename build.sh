@@ -4,19 +4,16 @@ set -ouex pipefail
 
 ### Install packages
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+## Packages can be installed from any enabled yum repo on the image.
+## RPMfusion repos are available by default in ublue main images
+## List of rpmfusion packages can be found here:
+## https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
+
+##This will install rpmfusion free/nonfree repos
+# dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 # this installs a package from fedora repos
-dnf install -y tmux virt-manager
-
-dnf -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-dnf -y install steam-devices
-
-curl -fsSL "https://pkgs.tailscale.com/stable/fedora/tailscale.repo" > /etc/yum.repos.d/tailscale.repo
-dnf -y install tailscale
+# dnf install -y virt-manager steam-devices
 
 # Use a COPR Example:
 #
@@ -28,4 +25,3 @@ dnf -y install tailscale
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-systemctl enable tailscaled

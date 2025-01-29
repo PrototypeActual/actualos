@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/aurora-dx:latest
+FROM ghcr.io/ublue-os/aurora-dx:stable
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable

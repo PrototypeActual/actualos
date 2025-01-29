@@ -20,11 +20,6 @@ rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/mast
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" | tee -a /etc/yum.repos.d/vscodium.repo
 dnf -y install codium
 
-## Disable recently added repos so they don't end up enabled on the final image:
-dnf config-manager disable rpmfusion-free
-dnf config-manager disable rpmfusion-nonfree
-dnf config-manager disable gitlab.com_paulcarroty_vscodium_repo
-
 ## Use a COPR Example:
 ##
 # dnf5 -y copr enable ublue-os/staging

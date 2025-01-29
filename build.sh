@@ -21,9 +21,9 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 dnf -y install codium
 
 ## Disable recently added repos so they don't end up enabled on the final image:
-dnf5 -y rpmfusion-free disable ublue-os/aurora-dx
-dnf5 -y rpmfusion-nonfree disable ublue-os/aurora-dx
-dnf5 -y gitlab.com_paulcarroty_vscodium_repo disable ublue-os/aurora-dx
+dnf config-manager disable rpmfusion-free
+dnf config-manager disable rpmfusion-nonfree
+dnf config-manager disable gitlab.com_paulcarroty_vscodium_repo
 
 ## Use a COPR Example:
 ##

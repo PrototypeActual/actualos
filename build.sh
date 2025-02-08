@@ -21,7 +21,10 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 
 ## Install programs with DNF
 dnf -y update
-dnf -y install codium discord steam
+dnf -y autoremove
+dnf -y install codium discord
+
+# dnf -y install codium discord steam
 
 ## Use a COPR Example:
 ##

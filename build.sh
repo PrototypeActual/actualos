@@ -26,7 +26,7 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 
 # rpm-ostree install codium discord python3-tkinter
 
-dnf5 -y install codium discord python3-tkinter
+dnf5 -y install codium discord steam python3-tkinter
 
 ## Use a COPR Example:
 ##

@@ -18,10 +18,11 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 
 ## Install programs with DNF
 # dnf5 -y install codium discord steam python3-tkinter
+dnf5 clean all
 
 dnf5 -y install codium discord python3-tkinter
 
-dnf5 install -y steam --enablerepo=rpmfusion-nonfree-steam --skip-broken
+dnf5 -y install steam
 
 # rpm-ostree install codium discord python3-tkinter
 

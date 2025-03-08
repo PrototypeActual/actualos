@@ -24,9 +24,9 @@ printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbase
 ## Install programs with DNF
 # dnf -y install codium discord
 
-rpm-ostree install codium discord python3-tkinter
+# rpm-ostree install codium discord python3-tkinter
 
-# dnf -y install codium discord steam
+dnf5 -y install codium discord python3-tkinter
 
 ## Use a COPR Example:
 ##

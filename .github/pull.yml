@@ -1,5 +1,6 @@
 version: "1"
 rules:
   - base: main
-    upstream: ublue-os:main # change `wei` to the owner of upstream repo
-    mergeMethod: hardreset
+    upstream: ublue-os:main
+    mergeMethod: merge
+    mergeUnstable: false

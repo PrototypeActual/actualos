@@ -16,8 +16,11 @@ dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release
 rpmkeys --import https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg
 printf "[gitlab.com_paulcarroty_vscodium_repo]\nname=download.vscodium.com\nbaseurl=https://download.vscodium.com/rpms/\nenabled=1\ngpgcheck=1\nrepo_gpgcheck=1\ngpgkey=https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg\nmetadata_expire=1h\n" | tee -a /etc/yum.repos.d/vscodium.repo
 
+## Tailscale preinstall tasks
+wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
+
 ## Install programs with DNF
-dnf5 -y install virt-manager codium
+dnf5 -y install virt-manager tailscale codium
 
 dnf5 -y remove lutris
 
@@ -33,4 +36,4 @@ dnf5 -y remove lutris
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-
+systemctl enable tailscaled

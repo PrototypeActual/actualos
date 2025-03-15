@@ -1,5 +1,5 @@
 FROM ghcr.io/ublue-os/bazzite:stable
-# FROM ghcr.io/ublue-os/aurora-dx:stable
+# FROM ghcr.io/ublue-os/bazzite-dx:stable
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable

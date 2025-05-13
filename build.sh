@@ -22,6 +22,8 @@ wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d
 ## Install programs with DNF
 dnf5 -y install virt-manager tailscale
 
+dnf5 -y remove discover-overlay
+
 # dnf5 -y install virt-manager tailscale codium
 
 # dnf5 -y remove lutris

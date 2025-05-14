@@ -24,20 +24,15 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
 
 ## Install programs with DNF
-dnf5 check-update
-
 dnf5 -y install virt-manager tailscale code
 
 dnf5 -y remove discover-overlay
 
 # dnf5 -y install virt-manager tailscale codium
 
-# dnf5 -y remove lutris
-
-# dnf5 -y install codium discord python3-tkinter
+# dnf5 -y install python3-tkinter
 
 ## Use a COPR Example:
-##
 # dnf5 -y copr enable ublue-os/staging
 # dnf5 -y install package
 ## Disable COPRs so they don't end up enabled on the final image:

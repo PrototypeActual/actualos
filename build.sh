@@ -24,9 +24,9 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
 
 ## Install programs with DNF
-dnf5 -y install virt-manager tailscale code
+dnf5 -y install virt-manager tailscale code discord
 
-dnf5 -y remove discover-overlay
+# dnf5 -y remove discover-overlay
 
 # dnf5 -y install virt-manager tailscale codium
 

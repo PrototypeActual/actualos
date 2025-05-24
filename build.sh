@@ -25,7 +25,8 @@ wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d
 
 ## Install programs with DNF
 dnf5 -y install virt-manager tailscale code
-# dnf5 -y remove discover-overlay
+
+dnf5 -y remove discover-overlay
 
 # dnf5 -y install virt-manager tailscale codium python3-tkinter
 

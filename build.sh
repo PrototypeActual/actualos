@@ -32,7 +32,7 @@ git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
 
 dkms install /usr/src/new-lg4ff
 
-dracut -f
+# dracut -f
 
 # dnf5 -y install virt-manager tailscale codium python3-tkinter
 

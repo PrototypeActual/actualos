@@ -25,6 +25,7 @@ dnf5 -y install virt-manager tailscale code python3-tkinter
 dnf5 -y remove discover-overlay
 
 uname -r
+ls /lib/modules/
 
 ## Use a COPR Example:
 # dnf5 -y copr enable ublue-os/staging

@@ -20,18 +20,17 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
 
 ## Install programs with DNF
-dnf5 -y install virt-manager tailscale code python3-tkinter dkms
+dnf5 -y install virt-manager tailscale code python3-tkinter
+# dnf5 -y install virt-manager tailscale code python3-tkinter dkms
 
-dnf5 -y remove discover-overlay
+# # Getting G923 PS driver installed
+# git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
 
-# Getting G923 PS driver installed
-git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
+# export KVERSION=$("ls /lib/modules/ -tr|tail -1")
 
-export KVERSION=$("ls /lib/modules/ -tr|tail -1")
+# dkms install /usr/src/new-lg4ff -k $KVERSION
 
-dkms install /usr/src/new-lg4ff -k $KVERSION
-
-dracut -f
+# dracut -f
 
 ## Use a COPR Example:
 # dnf5 -y copr enable ublue-os/staging

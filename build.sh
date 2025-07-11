@@ -25,9 +25,7 @@ dnf5 -y install virt-manager tailscale code python3-tkinter dkms
 dnf5 -y remove discover-overlay
 
 # Getting G923 PS driver installed
-git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
-
-export KVERSION="ls /lib/modules/ -tr|tail -1"
+git clone https://github.com/PrototypeActual/new-lg4ff.git /usr/src/new-lg4ff
 
 dkms install /usr/src/new-lg4ff
 

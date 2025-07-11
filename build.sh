@@ -30,10 +30,11 @@ dnf5 -y remove discover-overlay
 
 git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
 
-dkms install /usr/src/new-lg4ff
-
-dracut -f
-
+cd /usr/src/new-lg4ff
+make
+make install
+make load
+cd ~/
 # dnf5 -y install virt-manager tailscale codium python3-tkinter
 
 ## Use a COPR Example:

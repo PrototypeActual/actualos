@@ -19,20 +19,8 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 ## Tailscale preinstall tasks
 wget https://pkgs.tailscale.com/stable/fedora/tailscale.repo -O /etc/yum.repos.d/tailscale.repo
 
-## Install programs with DNF
-# dnf5 -y install virt-manager tailscale code python3-tkinter
-dnf5 -y install virt-manager tailscale code python3-tkinter dkms
-
-# Getting G923 PS driver installed
-git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
-
-KVERSION=$(ls /lib/modules/ -tr|tail -1)
-
-dkms add -m hid-logitech/v0.5.0
-
-dkms install /usr/src/new-lg4ff -k $KVERSION -m /lib/modules/$KVERSION
-
-dracut -f
+# Install programs with DNF
+dnf5 -y install virt-manager tailscale code python3-tkinter
 
 ## Use a COPR Example:
 # dnf5 -y copr enable ublue-os/staging

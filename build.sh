@@ -26,7 +26,7 @@ dnf5 -y install virt-manager tailscale code python3-tkinter dkms
 # Getting G923 PS driver installed
 git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
 
-KVERSION=$("ls /lib/modules/ -tr|tail -1")
+KVERSION=$(ls /lib/modules/ -tr|tail -1)
 
 dkms install /usr/src/new-lg4ff -k $KVERSION
 

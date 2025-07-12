@@ -28,7 +28,7 @@ git clone https://github.com/berarma/new-lg4ff.git /usr/src/new-lg4ff
 
 KVERSION=$(ls /lib/modules/ -tr|tail -1)
 
-dkms install /usr/src/new-lg4ff -k $KVERSION -m /lib/modules/$KVERSION -v $KVERSION
+dkms install /usr/src/new-lg4ff -k $KVERSION -m /lib/modules/$KVERSION
 
 dracut -f
 

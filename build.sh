@@ -32,3 +32,4 @@ dnf5 -y install virt-manager tailscale code python3-tkinter
 
 systemctl enable podman.socket
 systemctl enable tailscaled
+systemctl enable libvirtd

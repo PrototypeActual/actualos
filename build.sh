@@ -14,7 +14,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
 
 # Install programs with DNF
-dnf5 -y install virt-manager code python3-tkinter
+dnf5 -y install virt-manager code
 
 ## Use a COPR Example:
 # dnf5 -y copr enable ublue-os/staging

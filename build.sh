@@ -14,7 +14,21 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
 
 # Wazuh Install
-curl -o wazuh-agent-4.12.0-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.12.0-1.x86_64.rpm && WAZUH_MANAGER='192.168.70.21' rpm -ihv wazuh-agent-4.12.0-1.x86_64.rpm
+rpm --import https://packages.wazuh.com/key/GPG-KEY-WAZUH
+
+cat > /etc/yum.repos.d/wazuh.repo << EOF
+[wazuh]
+gpgcheck=1
+gpgkey=https://packages.wazuh.com/key/GPG-KEY-WAZUH
+enabled=1
+name=EL-\$releasever - Wazuh
+baseurl=https://packages.wazuh.com/4.x/yum/
+priority=1
+EOF
+
+WAZUH_MANAGER="192.168.70.21" dnf5 -y install wazuh-agent
+
+sed -i "s/^enabled=1/enabled=0/" /etc/yum.repos.d/wazuh.repo
 
 # Install programs with DNF
 dnf5 -y install code python3-tkinter

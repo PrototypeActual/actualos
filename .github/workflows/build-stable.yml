@@ -89,8 +89,6 @@ jobs:
       - name: Build Image
         id: build_image
         uses: redhat-actions/buildah-build@v2
-        env:
-          WAZUH_MANAGER_IP: ${{ secrets.WAZUH_MANAGER }}
         with:
           containerfiles: |
             ./Containerfile

@@ -180,3 +180,4 @@ jobs:
           TAGS: ${{ steps.push.outputs.digest }}
           COSIGN_EXPERIMENTAL: false
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
+          WAZUH_MANAGER_IP: ${{ secrets.WAZUH_MANAGER }}

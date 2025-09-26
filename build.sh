@@ -26,7 +26,6 @@ dnf5 -y install code python3-tkinter
 # dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
-systemctl daemon-reload
 systemctl enable podman.socket
 systemctl enable tailscaled
 systemctl enable libvirtd

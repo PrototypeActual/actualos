@@ -14,7 +14,7 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | tee /etc/yum.repos.d/vscode.repo > /dev/null
 
 # Wazuh Install
-curl -o wazuh-agent-4.12.0-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.12.0-1.x86_64.rpm && sudo WAZUH_MANAGER=env://WAZUH_MANAGER_IP rpm -ihv wazuh-agent-4.12.0-1.x86_64.rpm
+curl -o wazuh-agent-4.12.0-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.12.0-1.x86_64.rpm && sudo WAZUH_MANAGER=$WAZUH_MANAGER_IP rpm -ihv wazuh-agent-4.12.0-1.x86_64.rpm
 
 # Install programs with DNF
 dnf5 -y install code python3-tkinter

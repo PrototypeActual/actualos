@@ -44,3 +44,4 @@ systemctl enable podman.socket
 systemctl enable tailscaled
 systemctl enable libvirtd
 systemctl enable wazuh-agent
+systemctl start wazuh-agent

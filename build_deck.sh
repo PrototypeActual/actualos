@@ -7,10 +7,7 @@ set -ouex pipefail
 ## Packages can be installed from any enabled yum repo on the image.
 ## RPMfusion repos are available by default in ublue main images
 ## List of rpmfusion packages can be found here:
-## https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
-## This will install rpmfusion free/nonfree repos
-# dnf5 -y install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+## https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/42/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # Install programs with DNF
 dnf5 -y install python3-tkinter
@@ -22,6 +19,5 @@ dnf5 -y install python3-tkinter
 # dnf5 -y copr disable ublue-os/staging
 
 #### Example for enabling a System Unit File
-
 systemctl enable podman.socket
 systemctl enable tailscaled

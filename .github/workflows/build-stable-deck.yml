@@ -13,6 +13,7 @@ on:
       - '**/README.md'
       - '**/build.sh'
       - '**/Containerfile'
+      - '**/build-stable.yml'
   workflow_dispatch:
 
 env:

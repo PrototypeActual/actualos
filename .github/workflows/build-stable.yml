@@ -11,6 +11,8 @@ on:
       - main
     paths-ignore:
       - '**/README.md'
+      - '**/build_deck.sh'
+      - '**/Containerfile_deck'
   workflow_dispatch:
 
 env:

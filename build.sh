@@ -17,7 +17,7 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 dnf5 -y install code python3-tkinter
 
 # Install programs for live wallpaper
-dnf5 -y install plasma-smart-video-wallpaper-reborn qt6-multimedia qt6-multimedia-ffmpeg
+dnf5 -y install plasma-smart-video-wallpaper-reborn
 
 # Re enable KDE Wallpaper Engine Plugin
 # dnf5 -y copr enable bazzite-org/bazzite

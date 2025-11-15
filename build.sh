@@ -33,4 +33,3 @@ dnf5 -y install plasma-smart-video-wallpaper-reborn qt6-multimedia qt6-multimedi
 #### Example for enabling a System Unit File
 systemctl enable podman.socket
 systemctl enable tailscaled
-systemctl enable libvirtd

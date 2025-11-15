@@ -16,11 +16,13 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 # Install programs with DNF
 dnf5 -y install code python3-tkinter
 
+# Install programs for live wallpaper
+dnf5 -y install plasma-smart-video-wallpaper-reborn qt6-multimedia qt6-multimedia-ffmpeg
 
 # Re enable KDE Wallpaper Engine Plugin
-dnf5 -y copr enable bazzite-org/bazzite
-dnf5 -y install wallpaper-engine-kde-plugin
-dnf5 -y copr disable bazzite-org/bazzite
+# dnf5 -y copr enable bazzite-org/bazzite
+# dnf5 -y install wallpaper-engine-kde-plugin
+# dnf5 -y copr disable bazzite-org/bazzite
 
 ## Use a COPR Example:
 # dnf5 -y copr enable ublue-os/staging

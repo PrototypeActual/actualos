@@ -1,5 +1,5 @@
 ---
-name: Build Stable Deck Image
+name: Build SteamDeck Image
 on:
   pull_request:
     branches:

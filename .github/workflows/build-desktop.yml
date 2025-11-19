@@ -10,12 +10,12 @@ on:
     branches:
       - main
     paths-ignore:
-      - '**/disk_config/*'
       - '**/README.md'
+      - '**/disk_config/*'
       - '**/build-disk.yml'
-      - '**/build_steamdeck_stable.sh'
-      - '**/Containerfile_SteamDeck_Stable'
       - '**/build-steamdeck.yml'
+      - '**/build_files_steamdeck/*'
+      - '**/container_files_steamdeck/*'
   workflow_dispatch:
 
 env:

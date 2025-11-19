@@ -14,7 +14,7 @@ on:
       - '**/README.md'
       - '**/build-disk.yml'
       - '**/build_desktop_stable.sh'
-      - '**/Containerfile_Stable'
+      - '**/Containerfile_Desktop_Stable'
       - '**/build-stable.yml'
   workflow_dispatch:
 

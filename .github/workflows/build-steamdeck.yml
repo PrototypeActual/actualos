@@ -1,5 +1,5 @@
 ---
-name: Build SteamDeck Image
+name: Build Stable SteamDeck Image
 on:
   pull_request:
     branches:
@@ -13,7 +13,7 @@ on:
       - '**/disk_config/*'
       - '**/README.md'
       - '**/build-disk.yml'
-      - '**/build_stable.sh'
+      - '**/build_desktop_stable.sh'
       - '**/Containerfile_Stable'
       - '**/build-stable.yml'
   workflow_dispatch:
@@ -32,7 +32,7 @@ concurrency:
 
 jobs:
   build_push:
-    name: Build and push SteamDeck image
+    name: Build and push Stable SteamDeck image
     runs-on: ubuntu-24.04
 
     permissions:
@@ -97,7 +97,7 @@ jobs:
             org.opencontainers.image.created=${{ steps.date.outputs.date }}
             org.opencontainers.image.description=${{ env.IMAGE_DESC }}
             org.opencontainers.image.documentation=https://raw.githubusercontent.com/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}/${{ github.sha }}/README.md
-            org.opencontainers.image.source=https://github.com/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}/blob/${{ github.sha }}/Containerfile_SteamDeck
+            org.opencontainers.image.source=https://github.com/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}/blob/${{ github.sha }}/Containerfile_SteamDeck_Stable
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.url=https://github.com/${{ github.repository_owner }}/${{ env.IMAGE_NAME }}/tree/${{ github.sha }}
             org.opencontainers.image.vendor=${{ github.repository_owner }}
@@ -111,12 +111,12 @@ jobs:
           sep-tags: " "
           sep-annotations: " "
 
-      - name: Build SteamDeck image
+      - name: Build Stable SteamDeck image
         id: build_image
         uses: redhat-actions/buildah-build@7a95fa7ee0f02d552a32753e7414641a04307056 # v2
         with:
           containerfiles: |
-            ./container_files/Containerfile_SteamDeck
+            ./container_files_steamdeck/Containerfile_SteamDeck_Stable
           # Postfix image name with -custom to make it a little more descriptive
           # Syntax: https://docs.github.com/en/actions/learn-github-actions/expressions#format
           image: ${{ env.IMAGE_NAME }}
